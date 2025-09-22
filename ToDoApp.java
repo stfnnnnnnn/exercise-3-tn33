@@ -1,21 +1,24 @@
 // ToDoApp.java
-import java.util.*; 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner; 
 
 public class ToDoApp {
-    static ArrayList tasks = new ArrayList();
+    
+    private static final List<String> tasks = new ArrayList<>();
 
-    public static void addtask(String t){
-        tasks.add(t);
-        System.out.println("Task Added!!"); 
+    public static void addTask(String task){
+        tasks.add(task);
+        System.out.println("Task added!"); 
     }
 
     public static void showTasks( ) {
-        if(tasks.size()==0){
+        if(tasks.isEmpty()){
             System.out.println("No tasks yet"); 
         }
         else {
-            for(int i=0;i<=tasks.size();i++){ 
-                System.out.println((i+1)+". "+tasks.get(i));
+            for(int i = 0; i < tasks.size(); i++) { 
+                System.out.println((i + 1) + ". " + tasks.get(i));
             }
         }
     }
@@ -26,27 +29,36 @@ public class ToDoApp {
     }
 
     public static void main(String args[]) {
-        Scanner s=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+
         while(true){
-            System.out.println("1 Add Task"); // <-- inconsistent spacing
-            System.out.println("2.Show Tasks");
-            System.out.println("3.Remove Task");
-            System.out.println("4 Exit");
-            int choice=s.nextInt(); // 
-            if(choice==1){
-                System.out.println("Enter Task: "); 
-                String t=s.nextLine(); 
-                addtask(t);
-            } else if(choice==2){
-                showTasks();
-            } else if(choice==3){
-                System.out.print("Enter task no to remove: ");
-                int n=s.nextInt(); 
-                removeTask(n); // <--
-            } else if(choice==4){
-                break; 
-            } else{
-                System.out.println("Wrong Choice!!");
+            System.out.println("1 Add Task");
+            System.out.println("2. Show Tasks");
+            System.out.println("3 Remove Task");
+            System.out.println("4. Exit");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1 -> {
+                    System.out.println("Enter Task: "); 
+                    String task = scanner.nextLine(); 
+                    addTask(task);
+                }
+                case 2 -> showTasks();
+                case 3 -> {
+                    System.out.print("Enter task number to remove: ");
+                    int num = scanner.nextInt();
+                    scanner.nextLine();
+                    removeTask(num);
+                }
+                case 4 -> {
+                    System.out.println("bye. . .");
+                    scanner.close();
+                    return;
+                }
+                default -> System.out.println("Wrong Choice!!");
             }
         }
     }
