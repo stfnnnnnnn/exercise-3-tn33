@@ -25,7 +25,7 @@ public class ToDoApp {
 
     public static void removeTask(int n) {
         tasks.remove(n); 
-        System.out.println("task removed"); 
+        System.out.println("task removed");  
     }
 
     public static void main(String args[]) {
