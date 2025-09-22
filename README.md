@@ -117,25 +117,39 @@ Main Menu
 Upon running the program, the user is presented with a menu that shows the available actions.
 
 The user can input the numbers 1 through 4, which correspond to a specific action.
+
   1: Add Task
+  
   2: Show Tasks
+  
   3: Remove Task
+  
   4: Exit
+  
   Invalid input: if the user enters a value outside the options, an error message appears and the menu is shown again.
 
 Add Task
+
   Choosing 1 prompts the user to add a task by entering a task description.
+  
   In doing so, the task is added to a list.
 
 View Tasks
+
   Choosing 2 displays the list of tasks that the user has added.
+  
   If the list is empty, it will display a message informing the user that there are no tasks.
 
 Remove Task
+
   Choosing 3 prompts the user to remove a task.
+  
   The user can enter the number of the task they want to remove.
+  
   Valid: If the number is valid, the program removes the specified task from the list.
+  
   Invalid: If the number is invalid or the task does not exist, an error message appears and the user is sent back to the main menu.
+  
   Empty list: If the user has yet to add a task, it will display a message informing the user that there are no tasks.
 
 Exit
