@@ -113,6 +113,7 @@ Each number corresponds to an action:
 //JAVA//
 
 Main Menu
+
 Upon running the program, the user is presented with a menu that shows the available actions.
 
 The user can input the numbers 1 through 4, which correspond to a specific action.
